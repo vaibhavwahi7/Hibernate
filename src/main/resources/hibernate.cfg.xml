@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/db                </property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">ttn</property>
+
+        <!--JDBC connection pool-->
+        <property name="connection.pool_size">10</property>
+
+        <!-- SQL Dialect-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!--echo all executed SQL-->
+        <property name="show_sql">true</property>
+
+        <!-- <property name="hbm2ddl.auto">update</property> Q4. Update-->
+
+
+        <!--drop or re-create database schema at startup-->
+        <!-- <property name="hbm2ddl.auto">create</property> Q3. Create-->
+
+
+       <!-- <property name="hbm2ddl.auto">create-drop</property> Q5. create-drop -->
+        <property name="hbm2ddl.auto">create</property>
+        <!--Annotated entity class-->
+        <mapping class="Author"/>
+        <mapping class="Book"/>
+    </session-factory>
+</hibernate-configuration>
